@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Table Creation</title>
+</head>
+<body>
+    <h1>SQL Tables</h1>
+    <pre>
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE posts (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    title VARCHAR(200),
+    content TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+    </pre>
+</body>
+</html>
